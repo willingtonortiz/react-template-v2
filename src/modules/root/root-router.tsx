@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Root } from "./Root.tsx";
+import { Root } from "@modules/root/Root.tsx";
 
 export const rootRouter = createBrowserRouter([
   {

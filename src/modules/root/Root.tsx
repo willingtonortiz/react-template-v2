@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { Loader } from "../../shared/presentation/components/Loader";
-import { useNavigationLoading } from "../../core/presentation/components/hooks/useNavigationLoading.tsx";
+import { useNavigationLoading } from "@core/presentation/components/hooks/useNavigationLoading.tsx";
+import { Loader } from "@shared/presentation/components/Loader";
 
 export function Root() {
   const isLoading = useNavigationLoading();

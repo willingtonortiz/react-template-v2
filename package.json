@@ -10,12 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "clsx": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.47.0",
     "react-router-dom": "^6.16.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "tailwind-merge": "^1.14.0",
+    "tailwind-variants": "^0.1.14",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/node": "^20.8.2",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
