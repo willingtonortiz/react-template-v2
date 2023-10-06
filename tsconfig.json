@@ -27,8 +27,12 @@
       "@core/*": ["src/core/*"],
       "@shared/*": ["src/shared/*"],
       "@modules/*": ["src/modules/*"]
-    }
+    },
+
+    /* types */
+    "types": ["node", "vitest/globals"]
   },
-  "include": ["src"],
+  "include": ["src/**/*.tsx", "src/**/*.ts"],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
