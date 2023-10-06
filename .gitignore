@@ -8,6 +8,8 @@ logs
 **/*.backup.*
 **/*.back.*
 coverage
+environments/*.env
+
 
 node_modules
 bower_components
