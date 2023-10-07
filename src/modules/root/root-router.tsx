@@ -1,9 +1,10 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Root } from "@modules/root/Root.tsx";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { DevTool } from "@hookform/devtools";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { createBrowserRouter } from "react-router-dom";
+import { z } from "zod";
+import { ExamplePage } from "@modules/examples/presentation/pages/ExamplePage.tsx";
+import { Root } from "@modules/root/Root.tsx";
 import { isDevelopment } from "@shared/presentation/helpers/is-development.ts";
 
 export const rootRouter = createBrowserRouter([
@@ -14,6 +15,10 @@ export const rootRouter = createBrowserRouter([
       {
         path: "/",
         element: <FormExample />,
+      },
+      {
+        path: "/examples",
+        element: <ExamplePage />,
       },
     ],
   },
