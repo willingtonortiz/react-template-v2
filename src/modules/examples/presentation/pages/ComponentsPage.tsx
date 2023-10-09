@@ -19,6 +19,15 @@ import {
   PopoverTrigger,
 } from "@shared/presentation/components/ui/popover";
 import { RadioGroup, RadioGroupItem } from "@shared/presentation/components/ui/radio-group.tsx";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@shared/presentation/components/ui/select.tsx";
 import { Skeleton } from "@shared/presentation/components/ui/skeleton";
 import { useDisclosure } from "@shared/presentation/hooks/useDisclosure/useDisclosure";
 import cn from "@shared/presentation/utils/cn";
@@ -28,40 +37,17 @@ export function ExamplePage() {
     <div className="p-4">
       <RegisterForm />
 
-      <AlertDialogExample />
+      <ModalExample />
 
       <DatePickerExample />
 
-      <RadioGroup>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="default" id="r1" />
-          <Label htmlFor="r1">Default</Label>
-        </div>
+      <RadioButtonExample />
 
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="comfortable" id="r2" />
-          <Label htmlFor="r2">Comfortable</Label>
-        </div>
+      <SelectExample />
 
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="compact" id="r3" />
-          <Label htmlFor="r3">Compact</Label>
-        </div>
-      </RadioGroup>
+      <CheckboxExample />
 
-      <div className="flex flex-row items-center gap-2 my-4 flex-nowrap">
-        <Checkbox id="terms" />
-        <Label htmlFor="terms">Hello world</Label>
-      </div>
-
-      <div className="flex flex-row items-center gap-2 flex-nowrap">
-        <Skeleton className="w-12 h-12 bg-gray-400 rounded-full" />
-
-        <div className="space-y-2">
-          <Skeleton className="w-56 h-4 bg-gray-400" />
-          <Skeleton className="h-4 bg-gray-400 w-44" />
-        </div>
-      </div>
+      <SkeletonExample />
     </div>
   );
 }
@@ -155,7 +141,7 @@ function DatePickerExample() {
   );
 }
 
-function AlertDialogExample() {
+function ModalExample() {
   const disclosure = useDisclosure();
 
   return (
@@ -187,5 +173,66 @@ function AlertDialogExample() {
         </AlertDialogContent>
       </AlertDialog>
     </>
+  );
+}
+
+function SkeletonExample() {
+  return (
+    <div className="flex flex-row items-center gap-2 flex-nowrap">
+      <Skeleton className="w-12 h-12 bg-gray-400 rounded-full" />
+
+      <div className="space-y-2">
+        <Skeleton className="w-56 h-4 bg-gray-400" />
+        <Skeleton className="h-4 bg-gray-400 w-44" />
+      </div>
+    </div>
+  );
+}
+
+function RadioButtonExample() {
+  return (
+    <RadioGroup className={"grid-cols-2 mt-4"}>
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="default" id="r1" />
+        <Label htmlFor="r1">Default</Label>
+      </div>
+
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="comfortable" id="r2" />
+        <Label htmlFor="r2">Comfortable</Label>
+      </div>
+    </RadioGroup>
+  );
+}
+
+function CheckboxExample() {
+  return (
+    <div className="flex flex-row items-center gap-2 my-4 flex-nowrap">
+      <Checkbox id="terms" />
+      <Label htmlFor="terms">Hello world</Label>
+    </div>
+  );
+}
+
+function SelectExample() {
+  return (
+    <div className={"w-64 flex"}>
+      <Select>
+        <SelectTrigger className="w-[100px] border-r-0 rounded-tr-none rounded-br-none">
+          <SelectValue placeholder="DNI" />
+        </SelectTrigger>
+
+        <SelectContent>
+          <SelectItem value="DNI">DNI</SelectItem>
+          <SelectItem value="CE">CE</SelectItem>
+          <SelectItem value="Pasaporte">Pasaporte</SelectItem>
+        </SelectContent>
+      </Select>
+
+      <Input
+        className={"border-l-0 rounded-tl-none rounded-bl-none"}
+        placeholder={"Nro. de documento"}
+      />
+    </div>
   );
 }

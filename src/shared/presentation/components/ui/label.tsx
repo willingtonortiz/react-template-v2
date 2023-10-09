@@ -4,7 +4,7 @@ import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const labelVariants = tv({
-  base: "text-md font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+  base: "text-md font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
 });
 
 const Label = forwardRef<
