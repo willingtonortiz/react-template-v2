@@ -18,6 +18,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@shared/presentation/components/ui/popover";
+import { RadioGroup, RadioGroupItem } from "@shared/presentation/components/ui/radio-group.tsx";
 import { Skeleton } from "@shared/presentation/components/ui/skeleton";
 import { useDisclosure } from "@shared/presentation/hooks/useDisclosure/useDisclosure";
 import cn from "@shared/presentation/utils/cn";
@@ -28,6 +29,25 @@ export function ExamplePage() {
       <RegisterForm />
 
       <AlertDialogExample />
+
+      <DatePickerExample />
+
+      <RadioGroup>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="default" id="r1" />
+          <Label htmlFor="r1">Default</Label>
+        </div>
+
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="comfortable" id="r2" />
+          <Label htmlFor="r2">Comfortable</Label>
+        </div>
+
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="compact" id="r3" />
+          <Label htmlFor="r3">Compact</Label>
+        </div>
+      </RadioGroup>
 
       <div className="flex flex-row items-center gap-2 my-4 flex-nowrap">
         <Checkbox id="terms" />
@@ -42,8 +62,6 @@ export function ExamplePage() {
           <Skeleton className="h-4 bg-gray-400 w-44" />
         </div>
       </div>
-
-      <DatePickerExample />
     </div>
   );
 }
